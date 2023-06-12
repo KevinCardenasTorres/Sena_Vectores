@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Copia de Vector en Orden Inverso</title>
+</head>
+<body>
+  <h1>Copia de Vector en Orden Inverso</h1>
+
+  <label for="input1">Elemento 1:</label>
+  <input type="text" id="input1"><br>
+  <label for="input2">Elemento 2:</label>
+  <input type="text" id="input2"><br>
+  <label for="input3">Elemento 3:</label>
+  <input type="text" id="input3"><br>
+  <label for="input4">Elemento 4:</label>
+  <input type="text" id="input4"><br>
+  <label for="input5">Elemento 5:</label>
+  <input type="text" id="input5"><br>
+
+  <button onclick="copiarEnOrdenInverso()">Copiar y Mostrar</button>
+
+  <h2>Resultado:</h2>
+  <div id="resultado"></div>
+
+  <script>
+    function copiarEnOrdenInverso() {
+      var vector1 = [];
+      var vector2 = [];
+
+      // Leer los elementos del vector1
+      vector1.push(document.getElementById("input1").value);
+      vector1.push(document.getElementById("input2").value);
+      vector1.push(document.getElementById("input3").value);
+      vector1.push(document.getElementById("input4").value);
+      vector1.push(document.getElementById("input5").value);
+
+      // Copiar elementos del vector1 al vector2 en orden inverso
+      for (var i = 0; i < vector1.length; i++) {
+        vector2[i] = vector1[vector1.length - 1 - i];
+      }
+
+      // Mostrar los vectores en la página
+      document.getElementById("resultado").innerHTML = "Vector original: " + vector1.join(", ") + "<br>";
+      document.getElementById("resultado").innerHTML += "Vector invertido: " + vector2.join(", ");
+    }
+  </script>
+</body>
+</html>
